@@ -56,6 +56,7 @@ from typing import TYPE_CHECKING, Any, Callable
 import numpy as np
 import scipy.linalg as la
 import scipy.optimize as opt
+import scipy.fft as spfft
 from numpy import pi
 from numpy.fft import irfft, rfft, rfftfreq
 from numpy.random import default_rng
@@ -3424,3 +3425,19 @@ def fit(
         success=bool(result.success),
         diagnostic=result,
     )
+
+    def fft(
+        x,
+        *, 
+        pad=0, 
+        window=none
+        M=0
+    ):
+            
+        if (
+            window = tukey  
+        ):
+            wndw_tukey=signal.tukey(M)
+        return spfft.rfft(wndw_tukey * x)
+        else:
+            return spfft.rfft(x)
